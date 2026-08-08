@@ -4,7 +4,7 @@ const path = require('path');
 const url = require('url');
 const querystring = require('querystring');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const DB_FILE = path.join(__dirname, 'licenses_data.json');
 const SETTINGS_FILE = path.join(__dirname, 'settings_data.json');
 
