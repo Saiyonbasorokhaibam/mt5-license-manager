@@ -416,15 +416,10 @@ const server = http.createServer((req, res) => {
     }
   }
 
-  // --- ROOT: Serve SAIYON EA Website ---
+  // --- ROOT: Redirect to License Portal ---
   if (pathname === '/' || pathname === '/index.html') {
-    const filePath = path.join(EA_SITE_DIR, 'index.html');
-    if (fs.existsSync(filePath)) {
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      return fs.createReadStream(filePath).pipe(res);
-    }
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-    return res.end('EA website index.html not found');
+    res.writeHead(302, { 'Location': '/index.php' });
+    return res.end();
   }
 
   // --- LICENSE MANAGER GENERATOR (/manage) ---
