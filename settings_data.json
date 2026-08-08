@@ -1,0 +1,6 @@
+{
+  "admin_password": "admin123",
+  "key_multiplier": 4,
+  "key_offset": 550,
+  "grace_period": true
+}
